@@ -1,16 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./Counter.css";
 
 function Counter() {
-    
     const incrementHandler = (event) => {
         event.preventDefault();
         console.log("Test");
     };
 
     return (
-        <div>
-            <button onClick={incrementHandler}>Click Me!</button>1
+        <div className="container">
+            <div>
+                <button className="button" onClick={incrementHandler}>
+                    Click Me!
+                </button>
+            </div>
+            <div>
+                <h1>1</h1>
+            </div>
         </div>
     );
 }
