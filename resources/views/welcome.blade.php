@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-       <div id="example">
+       <div id="counter">
             <script src="{{asset('js/app.js')}}"></script>
        </div>
     </body>
