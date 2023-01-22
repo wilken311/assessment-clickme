@@ -30,7 +30,7 @@ descriptions
 - [x] Seeders and migration files
 - [x] Readme documentation
 - [x] Models and relationship definitions (in Eloquent)
-- [ ] At least one unit test for one of the functionalities
+- [x] At least one unit test for one of the functionalities
 
 
 
