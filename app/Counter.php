@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Counter extends Model
 {
-    protected $fillable = ['count'];
+    protected $fillable = [
+        'id',
+        'user_id',
+        'count'
+    ];
 }
