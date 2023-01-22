@@ -16,9 +16,7 @@ class CounterController extends Controller
      */
     public function index()
     {
-        $counterResult=Counter::find(1)->user;
-        $userResult=User::find(1)->counter;
-        return $counterResult;
+        return Counter::find(1)->user;
     }
 
     /**

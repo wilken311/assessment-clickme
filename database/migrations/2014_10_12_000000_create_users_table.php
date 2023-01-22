@@ -23,12 +23,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('counter_id', 'foreign_user_&_counter')
-            ->references('id')
-            ->on('counters')
-            ->onDelete('cascade');
+            // $table->foreign('counter_id', 'foreign_user_&_counter')
+            // ->references('id')
+            // ->on('counters')
+            // ->onDelete('cascade');
 
-            $table->unique(['counter_id']);
+            // $table->unique(['counter_id']);
         });
     }
 

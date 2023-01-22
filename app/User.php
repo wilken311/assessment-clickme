@@ -40,9 +40,9 @@ class User extends Authenticatable
     ];
 
     /*
-    Users table is belong to Counters table.
-    Has one to one inverse relationship.
-    Has a foriegn key of user_code_id.
+    Users table has many relationship Counters table.
+    Has one to many inverse relationship.
+    Has a foriegn key of counter_id.
     */
 
     public function counter()
