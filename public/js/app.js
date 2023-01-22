@@ -66904,13 +66904,14 @@ var useUserCounter = /*#__PURE__*/function () {
             counter: user.data["data"].count
           });
         case 9:
-          _context.next = 14;
+          _context.next = 15;
           break;
         case 11:
           _context.prev = 11;
           _context.t0 = _context["catch"](0);
+          alert("Please run >php artisan migrate --seed");
           console.log(_context.t0);
-        case 14:
+        case 15:
         case "end":
           return _context.stop();
       }

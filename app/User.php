@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Counter;
+
 
 class User extends Authenticatable
 {
@@ -36,6 +38,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*
+    Users table is belong to Counters table.
+    Has one to one inverse relationship.
+    Has a foriegn key of user_code_id.
+    */
 
     public function counter()
     {

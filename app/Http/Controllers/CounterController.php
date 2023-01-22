@@ -16,7 +16,9 @@ class CounterController extends Controller
      */
     public function index()
     {
-        return Counter::select('id','user_id','count','created_at')->get();
+        $counterResult=Counter::find(1)->user;
+        $userResult=User::find(1)->counter;
+        return $counterResult;
     }
 
     /**

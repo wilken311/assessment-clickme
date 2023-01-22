@@ -15,6 +15,7 @@ export const useUserCounter = async (userId) => {
             };
         }
     } catch (error) {
+        alert("Please run >php artisan migrate --seed")
         console.log(error);
     }
 };

@@ -19,6 +19,13 @@ class CreateCountersTable extends Migration
             $table->integer('count');
             $table->timestamps();
             $table->softDeletes();
+            
+            $table->foreign('user_id', 'foreign_counter_&_user')
+            ->references('id')
+            ->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
         });
     }
 
