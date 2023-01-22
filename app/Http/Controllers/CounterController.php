@@ -95,9 +95,6 @@ class CounterController extends Controller
         $counter->user_id = $request->input('user_id');
         $counter->count = $request->input('count');
         $counter->update();
-          
-        $user_id = $request->input('user_id');
-        $count = $request->input('count');
 
         return response()->json([
             'message'=>'Count updated successfullly.',

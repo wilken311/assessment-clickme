@@ -2,12 +2,25 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./Counter.css";
+import { useUserCounter } from "../hooks/counter";
 
 function Counter() {
-    
-    const [user_id, setUser_id] = useState(1); //set default user
+    const [userId, setUserId] = useState(1); //set default user
     const [counter, setCounter] = useState(0); //set default count
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        async function getUserData() {
+            //check existing user
+            const user = await useUserCounter(userId);
+            if (user.success) {
+                setCounter(user.counter);
+            } else {
+                setCounter(user.counter);
+            }
+        }
+        getUserData();
+    }, []);
 
     const createCounter = async () => {
         let counterData = {
@@ -34,7 +47,7 @@ function Counter() {
     const updateCounter = async (id) => {
         let counterData = {
             id: id,
-            user_id: user_id,
+            user_id: userId,
             count: counter + 1,
         };
         try {
@@ -59,15 +72,12 @@ function Counter() {
 
         //check existing user
         try {
-            const user = await axios.get(
-                `http://127.0.0.1:8000/counter/${user_id}`
-            );
-            if(user.data['data']==null){
-                createCounter();
+            const user = await useUserCounter(userId);
+            if (user.success) {
+                updateCounter(user.counterId);
             } else {
-                updateCounter(user.data['data'].id);
+                createCounter();
             }
-          
         } catch (error) {
             console.log(error);
             setMessage("Something went wrong");
